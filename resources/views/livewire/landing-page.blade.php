@@ -35,7 +35,7 @@
             <x-text-input class="px-5 py-3 w-80 border border-blue-400" name="email" type="email"
                 placeholder="Email" wire:model="email" />
             <span class="text-gray-100 text-sm">
-                We will send you a confirmation email.
+                {{ $errors->has('email') ? $errors->first('email') : 'We will send you a confirmation email.' }}
             </span>
             <x-primary-button class="w-80">
                 <span class="mx-auto">Get In!</span>
