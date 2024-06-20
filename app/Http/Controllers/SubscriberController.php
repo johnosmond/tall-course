@@ -12,6 +12,6 @@ class SubscriberController extends Controller
         if (!$subscriber->hasVerifiedEmail()) {
             $subscriber->markEmailAsVerified();
         }
-        return redirect()->route('home', ['verified' => true]);
+        return redirect()->route('landing', ['verified' => true]);
     }
 }
