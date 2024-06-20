@@ -49,6 +49,7 @@ class LandingPage extends Component
             });
 
             $subscriber->notify($notification);
+
         }, $deadLockRetries = 5);
 
         Log::info('Resetting email field');
