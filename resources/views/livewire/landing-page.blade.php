@@ -1,4 +1,4 @@
-<div class="flex flex-col bg-indigo-900 w-full h-screen" x-data="{ showSubscribe: false, showMessage: false, }">
+<div class="flex flex-col bg-indigo-900 w-full h-screen" x-data="{ showSubscribe: @entangle('showSubscribe'), showSuccess: @entangle('showSuccess'), }">
 
     <nav class="flex pt-5 justify-between container mx-auto text-indigo-300">
         <a class="text-4xl font-bold" href="{{ route('home') }}">
@@ -32,8 +32,8 @@
     <x-modal1 class="bg-pink-500" trigger="showSubscribe">
         <p class="text-white text-5xl font-extrabold text-center">Let's do it!</p>
         <form class="flex flex-col items-center p-24 gap-4" wire:submit.prevent="subscribe">
-            <input class="px-5 py-3 w-80 border border-blue-400" name="email" id="email" type="email"
-                placeholder="Enter your email." wire:model="email" />
+            <input class="px-5 py-3 w-80 border border-blue-400" id="email" name="email" type="email"
+                placeholder="Enter your email." wire:model.live="email" />
             <span class="text-gray-100 text-sm">
                 {{ $errors->has('email') ? $errors->first('email') : 'We will send you a confirmation email.' }}
             </span>
@@ -44,15 +44,15 @@
     </x-modal1>
 
     {{-- modal message --}}
-    <x-modal1 class="bg-green-500" trigger="showMessage">
+    <x-modal1 class="bg-green-500" trigger="showSuccess">
         <p class="animate-pulse text-white text-9xl font-extrabold text-center">
             &check;
         </p>
-        <p class="text-white text-5xl font-extrabold text-center mt-10">
+        <p class="text-white text-5xl font-extrabold text-center mt-10 mb-5">
             Great!
         </p>
-        <p class="text-white text-3xl text-center">
-            See you in your inbox.
+        <p class="text-white text-xl text-center">
+            Check your inbox for a confirmation email.
         </p>
     </x-modal1>
 

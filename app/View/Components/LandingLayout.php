@@ -12,6 +12,6 @@ class LandingLayout extends Component
      */
     public function render(): View
     {
-        return view('layouts.landing');
+        return view('layouts.landing-layout');
     }
 }
