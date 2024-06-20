@@ -32,8 +32,8 @@
     <x-modal1 class="bg-pink-500" trigger="showSubscribe">
         <p class="text-white text-5xl font-extrabold text-center">Let's do it!</p>
         <form class="flex flex-col items-center p-24 gap-4" wire:submit.prevent="subscribe">
-            <x-text-input class="px-5 py-3 w-80 border border-blue-400" name="email" type="email"
-                placeholder="Email" wire:model="email" />
+            <input class="px-5 py-3 w-80 border border-blue-400" name="email" id="email" type="email"
+                placeholder="Enter your email." wire:model="email" />
             <span class="text-gray-100 text-sm">
                 {{ $errors->has('email') ? $errors->first('email') : 'We will send you a confirmation email.' }}
             </span>

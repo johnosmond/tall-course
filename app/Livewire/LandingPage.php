@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use Illuminate\Support\Facades\Log;
 use Livewire\Component;
 use App\Models\Subscriber;
 use Illuminate\Support\Facades\DB;
@@ -50,6 +51,7 @@ class LandingPage extends Component
             $subscriber->notify($notification);
         }, $deadLockRetries = 5);
 
+        Log::info('Resetting email field');
         $this->reset('email');
     }
 
