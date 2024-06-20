@@ -1,7 +1,7 @@
 @props(['trigger'])
 
 <div class="flex fixed top-0 bg-gray-900 bg-opacity-60 items-center w-full h-full"
-    x-cloak x-show="{{ $trigger }}"
+    x-show="{{ $trigger }}"
     x-on:click.self="{{ $trigger }}=false"
     x-on:keydown.escape.window="{{ $trigger }}=false">
 
